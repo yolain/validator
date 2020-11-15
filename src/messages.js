@@ -106,6 +106,10 @@ Messages.prototype = {
     // New Add+
     for (var i = 0, format; i < formats.length; i++) {
       format = formats[i];
+      let input = rule.validator.input
+      if(customMessages && Array.isArray(input[(Object.keys(input))[0]])){
+        rule.attribute = rule.attribute.replace(/[0-9]+/g,'*')
+      }
       if (customMessages && customMessages[rule.attribute]) {
         var attribute = customMessages[rule.attribute];
         if (typeof attribute == 'string') {
