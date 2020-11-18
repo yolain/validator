@@ -98,10 +98,10 @@ Messages.prototype = {
    * @return {string}
    */
   _getTemplate: function(rule) {
-
     var messages = this.messages;
     var template = messages.def;
     var customMessages = this.customMessages;
+    var valueType = rule._getValueType()
     var formats = [rule.name + '.' + rule.attribute, rule.name];
     // New Add+
     for (var i = 0, format; i < formats.length; i++) {
@@ -131,7 +131,7 @@ Messages.prototype = {
     }
 
     if (typeof template === 'object') {
-      template = template[rule._getValueType()];
+      template = template[valueType];
     }
 
     return template;
