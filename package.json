@@ -1,7 +1,7 @@
 {
   "name": "@yolain/validation",
   "description": "Validation library inspired by Laravel's Validator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "./src/validator.js",
   "repository": {
