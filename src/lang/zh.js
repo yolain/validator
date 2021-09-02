@@ -35,5 +35,6 @@ module.exports = {
   string: ':attribute必须是一个字符串',
   url: ':attribute格式不正确',
   regex: ':attribute格式不正确',
-  attributes: {}
+  attributes: {},
+  json:':attribute格式有误'
 };
