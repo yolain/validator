@@ -47,6 +47,22 @@ function isValidDate(inDate) {
   return true;
 }
 
+function isJson(str){
+  if (typeof str == 'string') {
+    try {
+      let obj=JSON.parse(str);
+      if(typeof obj == 'object' && obj ){
+        return true;
+      }else{
+        return false;
+      }
+    } catch(e) {
+      //console.log('json：'+str+'!!!'+e);
+      return false;
+    }
+  }
+}
+
 var rules = {
   required: function(val) {
     var str;
@@ -426,6 +442,10 @@ var rules = {
 
   hex: function(val) {
     return /^[0-9a-f]+$/i.test(val);
+  },
+
+  json:function (val){
+    return isJson(val);
   }
 };
 
